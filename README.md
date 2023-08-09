@@ -1,3 +1,19 @@
+# Features
+
+## 
+- [x] File tree
+- [x] Fuzzy finding over anything
+- [x] Colorscheme
+- [x] Markdown preview
+- [ ] Treesitter
+- [ ] Harpoon
+- [ ] LSP
+- [ ] Completion
+- [ ] Snippets
+- [ ] Git integration
+- [ ] Debugging
+- [ ] Autocommands
+
 # Structure
 
 ```

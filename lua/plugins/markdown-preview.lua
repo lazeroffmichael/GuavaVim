@@ -16,5 +16,8 @@ return {
   keys = {
     { "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", desc = "Markdown Preview" },
   },
+  config = function()
+    vim.g.mkdp_auto_close = false -- Don't close when switching buffers
+  end,
   lazy = true,
 }

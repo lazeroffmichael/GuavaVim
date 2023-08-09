@@ -1,3 +1,5 @@
+local Util = require("core.utils")
+
 -- Fuzzy Finder (files, lsp, etc)
 return {
   "nvim-telescope/telescope.nvim",
@@ -19,10 +21,6 @@ return {
     },
   },
   keys = {
-    {
-      "<leader><leader>",
-      "<cmd>Telescope find_files<CR>",
-      desc = "Telescope: Find Files",
-    },
+    { "<leader><leader>", Util.telescope("files"), desc = "Telescope: Find Files" },
   },
 }
