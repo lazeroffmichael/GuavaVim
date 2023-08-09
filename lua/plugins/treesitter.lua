@@ -5,7 +5,7 @@ return {
   version = false,
   event = { "BufReadPost", "BufNewFile" },
   dependencies = {
-    { "nvim-treesitter/nvim-treesitter-textobjects", },
+    { "nvim-treesitter/nvim-treesitter-textobjects" },
   },
   build = ":TSUpdate",
   cmd = { "TSUpdateSync" },
@@ -36,6 +36,7 @@ return {
       "vimdoc",
       "yaml",
       "toml",
+      "gitcommit",
     },
     -- See the nvim-ts-context-comment string man for disabing autocmd
     context_commentstring = {

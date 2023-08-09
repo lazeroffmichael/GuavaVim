@@ -27,6 +27,20 @@ return {
 
     -- search
     { "<leader>sg", "<cmd>Telescope live_grep<cr>", desc = "Telescope: Search Grep" },
+    { "<leader>sb", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Telescope: Search Buffer" },
     { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Telescope: Search Key Maps" },
+    { "<leader>sc", "<cmd>Telescope commands<cr>", desc = "Telescope: Commands" },
+    { "<leader>sC", "<cmd>Telescope command_history<cr>", desc = "Telescope: Command History" },
+    { "<leader>sd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Telescope: Document Diagnostics" },
+    { "<leader>sD", "<cmd>Telescope diagnostics<cr>", desc = "Telescope: Workspace diagnostics" },
+    { "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Telescope: Help Pages" },
+    { "<leader>sm", "<cmd>Telescope marks<cr>", desc = "Telescope: Jump to Mark" },
+    { "<leader>sM", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
+    { "<leader>sM", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
+    { "<leader>sw", "<cmd>Telescope grep_string word_match=-w<cr>", desc = "Telescope: Search Current Word" },
+    { "<leader>sW", "<cmd>Telescope grep_string<cr>", mode = "v", desc = "Telescope: Search Current Word" },
+
+    -- git
+    { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "commits" },
   },
 }
