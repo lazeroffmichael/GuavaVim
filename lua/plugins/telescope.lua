@@ -15,12 +15,13 @@ return {
       -- NOTE: If you are having trouble with this installation,
       --       refer to the README for telescope-fzf-native for more instructions.
       build = "make",
-      cond = function()
-        return vim.fn.executable("make") == 1
-      end,
+      cond = function() return vim.fn.executable("make") == 1 end,
     },
   },
   keys = {
-    { "<leader><leader>", Util.telescope("files"), desc = "Telescope: Find Files" },
+    -- find files
+    { "<leader><space>", Util.find_files(), desc = "Telescope: Find Files (auto)" },
+    { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Telescope: Find Files (all)" },
+    { "<leader>fb", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Telescope: Switch Buffer" },
   },
 }

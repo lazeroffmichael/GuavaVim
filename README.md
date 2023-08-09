@@ -2,11 +2,12 @@
 
 ## 
 - [x] File tree
-- [x] Fuzzy finding over anything
+- [ ] Fuzzy finding over everything
 - [x] Colorscheme
 - [x] Markdown preview
+- [x] Context aware commenting 
 - [ ] Treesitter
-- [ ] Harpoon
+- [X] Harpoon
 - [ ] LSP
 - [ ] Completion
 - [ ] Snippets
