@@ -22,6 +22,11 @@ return {
     -- find files
     { "<leader><space>", Util.find_files(), desc = "Telescope: Find Files (auto)" },
     { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Telescope: Find Files (all)" },
+    { "<leader>fh", "<cmd>Telescope find_files hidden=true<cr>", desc = "Telescope: Find Files (hidden)" },
     { "<leader>fb", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Telescope: Switch Buffer" },
+
+    -- search
+    { "<leader>sg", "<cmd>Telescope live_grep<cr>", desc = "Telescope: Search Grep" },
+    { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Telescope: Search Key Maps" },
   },
 }

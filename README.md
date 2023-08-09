@@ -7,7 +7,7 @@
 - [x] Markdown preview
 - [x] Context aware commenting 
 - [ ] Treesitter
-- [X] Harpoon
+- [x] Harpoon
 - [ ] LSP
 - [ ] Completion
 - [ ] Snippets
