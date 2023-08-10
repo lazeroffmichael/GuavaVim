@@ -1,6 +1,5 @@
 require("core")
 require("install-lazy")
-require("lsp_config")
 
 -- Set the colorscheme name here
 local name = "tokyodark"
