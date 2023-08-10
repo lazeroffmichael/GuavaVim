@@ -16,6 +16,7 @@ return {
         topdelete = { text = "‾" },
         changedelete = { text = "~" },
       },
+      numhl = true,
       on_attach = function(bufnr)
         vim.keymap.set(
           "n",

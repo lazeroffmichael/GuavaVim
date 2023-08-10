@@ -2,7 +2,7 @@
 
 ## 
 - [x] File tree
-- [ ] Fuzzy finding over everything
+- [x] Fuzzy finding over everything
 - [x] Colorscheme
 - [x] Markdown preview
 - [x] Context aware commenting 
@@ -10,8 +10,9 @@
 - [x] Harpoon
 - [ ] LSP
 - [ ] Completion
+- [ ] Text surround
 - [ ] Snippets
-- [ ] Git integration
+- [x] Git integration
 - [ ] Debugging
 - [ ] Autocommands
 
