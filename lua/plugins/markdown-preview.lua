@@ -9,7 +9,7 @@ return {
   },
   build = function() vim.fn["mkdp#util#install"]() end,
   keys = {
-    { "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", desc = "Markdown Preview" },
+    { "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", desc = "[m]arkdown [p]review" },
   },
   config = function()
     vim.g.mkdp_auto_close = false -- Don't close when switching buffers

@@ -6,10 +6,10 @@ vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
 
-vim.keymap.set("n", "<leader>wj", "<cmd>resize +2<cr>", { desc = "Increase window height" })
-vim.keymap.set("n", "<leader>wk", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
-vim.keymap.set("n", "<leader>wl", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
-vim.keymap.set("n", "<leader>wh", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+vim.keymap.set("n", "<leader>wj", "<cmd>resize +2<cr>", { desc = "[w]indow short" })
+vim.keymap.set("n", "<leader>wk", "<cmd>resize -2<cr>", { desc = "[w]indow tall" })
+vim.keymap.set("n", "<leader>wl", "<cmd>vertical resize -2<cr>", { desc = "[w]indow skinny" })
+vim.keymap.set("n", "<leader>wh", "<cmd>vertical resize +2<cr>", { desc = "[w]indow wide" })
 
 -- windows
 vim.keymap.set("n", "<leader>w-", "<C-W>s", { desc = "Split window below" })
@@ -25,13 +25,13 @@ vim.keymap.set("n", "J", "mzJ`z", { desc = "Append Below Lines To Current" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Jump Down Half Page" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Jump Up Half Page" })
 
-vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste But Don't Save" })
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank To System Clipboard" })
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete To Void Register" })
+vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "[p]aste void" })
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "[y]ank (clipboard)" })
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "[d]elete (void)" })
 
 vim.keymap.set("n", "Q", "<nop>", { desc = "Don't Use Q" })
 
-vim.keymap.set("n", "<leader>rp", "<cmd>!python3 %<CR>", { desc = "Run Python File" })
+vim.keymap.set("n", "<leader>rp", "<cmd>!python3 %<CR>", { desc = "[r]un [p]ython" })
 
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 
@@ -47,7 +47,6 @@ vim.keymap.set("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev se
 
 -- save file
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr><esc>", { desc = "Save file" })
-vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
-
-vim.keymap.set("n", "<leader>xl", "<cmd>lopen<cr>", { desc = "Location List" })
-vim.keymap.set("n", "<leader>xq", "<cmd>copen<cr>", { desc = "Quickfix List" })
+vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "[q]uit all" })
+vim.keymap.set("n", "<leader>qd", "<cmd>qa!<cr>", { desc = "[q]uit [d]estroy all" })
+vim.keymap.set("n", "<leader>wq", "<cmd>wqa<cr>", { desc = "[w]rite [q]uit all" })

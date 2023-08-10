@@ -10,7 +10,7 @@ return {
     {
       "<leader>e",
       "<cmd>Neotree toggle<CR>",
-      desc = "Neotree: Toggle File Explorer",
+      desc = "[e]xplorer (neotree)",
     },
   },
 }

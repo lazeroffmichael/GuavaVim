@@ -15,13 +15,13 @@ return {
 
     -- Useful status updates for LSP
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-    { "j-hui/fidget.nvim", 
-      tag = "legacy", 
-      opts = {} 
+    { "j-hui/fidget.nvim",
+      tag = "legacy",
+      opts = {}
     },
-    
+
     -- Automatically install LSPs to stdpath for neovim
-    { "williamboman/mason.nvim", 
+    { "williamboman/mason.nvim",
       config = true,
       cmd = { "Mason", "MasonInstall", "MasonUninstall", "MasonUninstallAll", "MasonLog"},
     },
