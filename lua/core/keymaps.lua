@@ -12,8 +12,8 @@ vim.keymap.set("n", "<leader>wl", "<cmd>vertical resize -2<cr>", { desc = "Decre
 vim.keymap.set("n", "<leader>wh", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
 -- windows
-vim.keymap.set("n", "<C-w>-", "<C-W>s", { desc = "Split window below" })
-vim.keymap.set("n", "<C-w>|", "<C-W>v", { desc = "Split window right", remap = true })
+vim.keymap.set("n", "<leader>w-", "<C-W>s", { desc = "Split window below" })
+vim.keymap.set("n", "<leader>w|", "<C-W>v", { desc = "Split window right" })
 
 -- better indenting
 vim.keymap.set("v", "<", "<gv", { desc = "Remove indention" })

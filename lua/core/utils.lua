@@ -6,7 +6,7 @@ function M.find_files()
   return function()
     local builtin = "find_files"
     if vim.loop.fs_stat(vim.loop.cwd() .. "/.git") then builtin = "git_files" end
-    opts = {}
+    local opts = {}
     opts.show_tracked = true
     require("telescope.builtin")[builtin](opts)
   end

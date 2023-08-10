@@ -9,11 +9,16 @@
 - [ ] Treesitter
 - [x] Harpoon
 - [ ] LSP
+    - [ ] Refactor
+    - [ ] Parentheses
+    - [ ] Icons
+    - [ ] More Compleetion sources
 - [ ] Completion
 - [ ] Text surround
 - [ ] Snippets
 - [x] Git integration
 - [ ] Debugging
+- [ ] Testing
 - [ ] Autocommands
 
 # Structure
