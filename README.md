@@ -1,3 +1,7 @@
+# My Custom Neovim Config
+
+> Put passion in the game.
+
 # Features
 
 ## 

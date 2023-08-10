@@ -7,7 +7,6 @@ return {
     "MarkdownPreviewStop",
     "MarkdownPreviewToggle",
   },
-  event = "BufRead",
   build = function() vim.fn["mkdp#util#install"]() end,
   keys = {
     { "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", desc = "Markdown Preview" },
