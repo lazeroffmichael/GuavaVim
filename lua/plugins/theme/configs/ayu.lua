@@ -1,6 +1,5 @@
-local M = {}
-
-M.opts = {
+-- This is not the same as the plugin return with lazy in the `plugins` dir.
+return {
   -- Transparency
   -- overrides = {
   --   Normal = { bg = "None" },
@@ -15,5 +14,3 @@ M.opts = {
   -- },
   mirage = false, -- false for dark
 }
-
-return M

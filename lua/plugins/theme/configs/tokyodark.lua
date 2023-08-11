@@ -1,6 +1,4 @@
-local M = {}
-
-M.opts = {
+return {
   transparent_background = false,                                       -- set background to transparent
   gamma = 1.0,                                                          -- adjust the brightness of the theme
   styles = {
@@ -14,5 +12,3 @@ M.opts = {
   custom_palette = {} or function(palette) return {} end,                -- extend palette
   terminal_colors = true,                                                -- enable terminal colors
 }
-
-return M
