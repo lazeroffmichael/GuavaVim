@@ -53,3 +53,5 @@ vim.keymap.set("n", "<leader>wq", "<cmd>wqa<cr>", { desc = "[w]rite [q]uit all" 
 
 -- Toggle diagnostics
 vim.keymap.set("n", "<leader>td", require("core.utils").toggle_diagnostics, { desc = "[t]oggle [d]iagnostics" })
+
+vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = "[e]xplorer (netrw)" })

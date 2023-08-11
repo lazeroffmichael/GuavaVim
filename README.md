@@ -7,7 +7,6 @@ A custom neovim config with all the fixings. It's always a work in progress 😎
 | Feature                   | Handler                                                                                                                                   |
 | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | ✅ Plugin Management      | [lazy.nvim](https://github.com/folke/lazy.nvim)                                                                                           |
-| ✅ File Explorer          | [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)                                                                           |
 | ✅ Fuzzy Finding          | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                                                                        |
 | ✅ LSP Configuration      | [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) + [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim) |
 | ✅ LSP Server Installer   | [mason.nvim](https://github.com/williamboman/mason.nvim)                                                                                  |
