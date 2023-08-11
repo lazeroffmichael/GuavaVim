@@ -21,11 +21,33 @@ return {
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
     { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
 
-    -- Automatically install LSPs to stdpath for neovim
+    -- Install all LSP's, DAP's, Linters, and Formatters here.
+    -- https://github.com/williamboman/mason.nvim/issues/130#issuecomment-1217773757
     {
       "williamboman/mason.nvim",
-      config = true,
-      cmd = { "Mason", "MasonInstall", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
+      cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
+      config = function()
+        local ensure_installed = {
+          -- LSP's
+          "pyright",
+          "lua-language-server", -- aka lua_ls
+          -- Formatters
+          "black",
+          "prettierd",
+          "stylua",
+        }
+
+        require("mason").setup({
+          ensure_installed = ensure_installed,
+          max_concurrent_installers = 10,
+        })
+
+        vim.api.nvim_create_user_command(
+          "MasonInstallAll",
+          function() vim.cmd("MasonInstall " .. table.concat(ensure_installed, " ")) end,
+          {}
+        )
+      end,
     },
 
     -- Signature help
@@ -41,6 +63,7 @@ return {
       config = function()
         -- Server list
 
+        -- Ensure that our configured servers are installed
         local ensure_installed = {
           "pyright",
           "lua_ls",

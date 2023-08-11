@@ -57,6 +57,32 @@ A custom neovim config with all the fixings. It's always a work in progress 😎
 └── stylua.toml
 ```
 
+### 🌕 Installation Notes
+
+```
+git clone https://github.com/lazeroffmichael/GuavaVim.git ~/.config/nvim
+```
+
+Install the language servers, formatters, linters, and debuggers:
+
+```
+:MasonInstallAll
+```
+
+Check `:Mason` to check that you have tools installed.
+
+For formatting to work, there needs to be a formatter on your path available. You can
+use formatters installed through outside package managers, or you can use the formatters
+installed with Mason.
+
+To use the formatters installed with Mason, add Mason's bin to path in your shell rc file:
+
+```
+export PATH="$PATH:$HOME/.local/share/nvim/mason/bin"
+```
+
+You can run `which stylua` and make sure that it registers that path.
+
 ### 🎥 Credits
 
 Thank you to these sources:
