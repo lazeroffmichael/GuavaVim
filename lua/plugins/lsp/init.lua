@@ -54,7 +54,7 @@ return {
     -- It looks like the sig help is just slow on require("") functions
     {
       "ray-x/lsp_signature.nvim",
-      event = "VeryLazy",
+      event = "LSPAttach",
       opts = {
         floating_window = false,
         hint_prefix = "󰌋 ", -- no emoji just in case terminal doesn't like
