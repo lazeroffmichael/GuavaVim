@@ -1,8 +1,10 @@
 require("core")
 require("install-lazy")
 
--- Set the colorscheme name here
-local name = "ayu"
+
+-- Tokyodark
+-- Ayu
+local name = "tokyodark"
 
 -- Set the theme
 vim.cmd.colorscheme(name)

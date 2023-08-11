@@ -3,7 +3,7 @@ return {
     "tiagovla/tokyodark.nvim",
     priority = 10000,
     lazy = true,
-    opts = require("plugins.theme.tokyodark").opts,
+    opts = require("plugins.theme.configs.tokyodark").opts,
   },
 
   {
@@ -11,6 +11,6 @@ return {
     name = "ayu",
     priority = 10000,
     lazy = true,
-    opts = require("plugins.theme.ayu").opts,
+    opts = require("plugins.theme.configs.ayu").opts,
   },
 }
