@@ -33,6 +33,13 @@ return {
       cmd = { "Mason", "MasonInstall", "MasonUninstall", "MasonUninstallAll", "MasonLog"},
     },
 
+    -- Signature help
+    {
+      "ray-x/lsp_signature.nvim",
+      opts = {},
+      config = function(_, opts) require'lsp_signature'.setup(opts) end
+    },
+
     -- Mason lspconfig setup
     { "williamboman/mason-lspconfig.nvim",
       config = function()
