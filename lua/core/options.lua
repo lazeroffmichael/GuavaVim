@@ -37,7 +37,6 @@ vim.opt.swapfile = false
 vim.opt.tabstop = 4 -- Number of spaces tabs count for
 vim.opt.termguicolors = true -- True color support
 vim.opt.timeoutlen = 300
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 vim.opt.undolevels = 10000
 vim.opt.updatetime = 50 -- Save swap file and trigger CursorHold
