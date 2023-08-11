@@ -12,6 +12,18 @@ function M.find_files()
   end
 end
 
+local enabled = true
+function M.toggle_diagnostics()
+  enabled = not enabled
+  if enabled then
+    vim.diagnostic.enable()
+    print("Enabled diagnostics")
+  else
+    vim.diagnostic.disable()
+    print("Disabled diagnostics")
+  end
+end
+
 M.icons = {
   Text = "󰉿",
   Table = "",
