@@ -51,10 +51,14 @@ return {
     },
 
     -- Signature help
+    -- It looks like the sig help is just slow on require("") functions
     {
       "ray-x/lsp_signature.nvim",
-      opts = {},
-      config = function(_, opts) require("lsp_signature").setup(opts) end,
+      event = "VeryLazy",
+      opts = {
+        floating_window = false,
+        hint_prefix = "󰌋 ", -- no emoji just in case terminal doesn't like
+      },
     },
 
     -- Mason lspconfig setup
