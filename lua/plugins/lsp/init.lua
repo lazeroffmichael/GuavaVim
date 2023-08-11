@@ -30,11 +30,13 @@ return {
         local ensure_installed = {
           -- LSP's
           "pyright",
+          "ruff-lsp",
           "lua-language-server", -- aka lua_ls
           -- Formatters
           "black",
           "prettierd",
           "stylua",
+          -- Linters
         }
 
         require("mason").setup({
@@ -70,6 +72,7 @@ return {
         -- Ensure that our configured servers are installed
         local ensure_installed = {
           "pyright",
+          "ruff_lsp",
           "lua_ls",
         }
 
