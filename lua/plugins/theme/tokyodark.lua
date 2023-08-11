@@ -1,5 +1,7 @@
-require("tokyodark").setup({
-  transparent_background = false,                                        -- set background to transparent
+local M = {}
+
+M.opts = {
+  transparent_background = false,                                       -- set background to transparent
   gamma = 1.0,                                                          -- adjust the brightness of the theme
   styles = {
     comments = { bold = true, },                                          -- style for comments
@@ -11,4 +13,6 @@ require("tokyodark").setup({
   custom_highlights = {} or function(highlights, palette) return {} end, -- extend highlights
   custom_palette = {} or function(palette) return {} end,                -- extend palette
   terminal_colors = true,                                                -- enable terminal colors
-})
+}
+
+return M

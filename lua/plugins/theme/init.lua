@@ -1,17 +1,16 @@
 return {
   {
-    "shaunsingh/nord.nvim",
-    priority = 10000,
-    lazy = true,
-  },
-  {
-    "marko-cerovac/material.nvim",
-    priority = 10000,
-    lazy = true,
-  },
-  {
     "tiagovla/tokyodark.nvim",
     priority = 10000,
     lazy = true,
-  }
+    opts = require("plugins.theme.tokyodark").opts,
+  },
+
+  {
+    "Shatur/neovim-ayu",
+    name = "ayu",
+    priority = 10000,
+    lazy = true,
+    opts = require("plugins.theme.ayu").opts,
+  },
 }
