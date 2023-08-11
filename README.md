@@ -17,6 +17,7 @@ A custom neovim config with all the fixings. It's always a work in progress 😎
 | ✅ Pinned File Navigation | [harpoon](https://github.com/ThePrimeagen/harpoon)                                                                                        |
 | ✅ Git                    | [vim-fugitive](https://github.com/tpope/vim-fugitive) + [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                       |
 | ✅ Fast Movements         | [flash.nvim](https://github.com/folke/flash.nvim)                                                                                         |
+| ✅ Formatting             | [formatter.nvim](https://github.com/mhartington/formatter.nvim)                                                                           |
 
 ...and more!
 
