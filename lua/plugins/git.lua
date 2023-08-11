@@ -3,7 +3,9 @@ return {
     "tpope/vim-fugitive",
     lazy = true,
     cmd = { "G", "Git" },
+    init = function() vim.keymap.set("n", "<leader>g", vim.cmd.Git, { desc = "[g]it fugitive" }) end,
   },
+
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     "lewis6991/gitsigns.nvim",

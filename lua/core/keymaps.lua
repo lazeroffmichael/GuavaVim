@@ -51,9 +51,5 @@ vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "[q]uit all" })
 vim.keymap.set("n", "<leader>qd", "<cmd>qa!<cr>", { desc = "[q]uit [d]estroy all" })
 vim.keymap.set("n", "<leader>wq", "<cmd>wqa<cr>", { desc = "[w]rite [q]uit all" })
 
--- Fugitive binding here since it no likey lazy
-vim.keymap.set("n", "<leader>g", vim.cmd.Git, { desc = "[g]it fugitive" })
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "[u]ndo tree" })
-
 -- Toggle diagnostics
 vim.keymap.set("n", "<leader>td", require("core.utils").toggle_diagnostics, { desc = "[t]oggle [d]iagnostics" })
