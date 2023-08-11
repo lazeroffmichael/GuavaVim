@@ -15,33 +15,29 @@ return {
   end,
   dependencies = {
     -- Configure sane lsp for neovim and lua api stuff
-    { "folke/neodev.nvim",
-      event = "LspAttach",
-      opts = {}
-    },
+    { "folke/neodev.nvim", event = "LspAttach", opts = {} },
 
     -- Useful status updates for LSP
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-    { "j-hui/fidget.nvim",
-      tag = "legacy",
-      opts = {}
-    },
+    { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
 
     -- Automatically install LSPs to stdpath for neovim
-    { "williamboman/mason.nvim",
+    {
+      "williamboman/mason.nvim",
       config = true,
-      cmd = { "Mason", "MasonInstall", "MasonUninstall", "MasonUninstallAll", "MasonLog"},
+      cmd = { "Mason", "MasonInstall", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
     },
 
     -- Signature help
     {
       "ray-x/lsp_signature.nvim",
       opts = {},
-      config = function(_, opts) require'lsp_signature'.setup(opts) end
+      config = function(_, opts) require("lsp_signature").setup(opts) end,
     },
 
     -- Mason lspconfig setup
-    { "williamboman/mason-lspconfig.nvim",
+    {
+      "williamboman/mason-lspconfig.nvim",
       config = function()
         -- Server list
 
@@ -75,14 +71,12 @@ return {
 
             -- Get the config for the server if it exists
             local ok, server = pcall("plugins.lsp.configs." .. server_name)
-            if ok then
-              opts.settings = server
-            end
+            if ok then opts.settings = server end
 
             require("lspconfig")[server_name].setup(opts)
-          end
+          end,
         })
-      end
-    }
+      end,
+    },
   },
 }

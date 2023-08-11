@@ -1,7 +1,6 @@
 require("core")
 require("install-lazy")
 
-
 -- Tokyodark
 -- Ayu
 local name = "tokyodark"

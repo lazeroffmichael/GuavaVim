@@ -24,8 +24,6 @@ local function lsp_keymaps(bufnr)
 end
 -- stylua: ignore end
 
-M.on_attach = function(_, bufnr)
-  lsp_keymaps(bufnr)
-end
+M.on_attach = function(_, bufnr) lsp_keymaps(bufnr) end
 
 return M

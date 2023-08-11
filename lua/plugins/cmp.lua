@@ -6,9 +6,7 @@ return {
     lazy = true,
     dependencies = {
       "rafamadriz/friendly-snippets",
-      config = function()
-        require("luasnip.loaders.from_vscode").lazy_load()
-      end,
+      config = function() require("luasnip.loaders.from_vscode").lazy_load() end,
     },
     opts = {
       -- history = true, -- keep track of this history of snips and jump with <c-o>
@@ -17,10 +15,10 @@ return {
     keys = {
       {
         "<tab>",
-        function()
-          return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
-        end,
-        expr = true, silent = true, mode = "i",
+        function() return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>" end,
+        expr = true,
+        silent = true,
+        mode = "i",
       },
       { "<tab>", function() require("luasnip").jump(1) end, mode = "s" },
       { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
@@ -37,7 +35,7 @@ return {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "saadparwaiz1/cmp_luasnip",
-      "windwp/nvim-autopairs"
+      "windwp/nvim-autopairs",
     },
     opts = function()
       vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
@@ -52,9 +50,7 @@ return {
           completeopt = "menu,menuone,noinsert",
         },
         snippet = {
-          expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-          end,
+          expand = function(args) require("luasnip").lsp_expand(args.body) end,
         },
         mapping = cmp.mapping.preset.insert({
           ["<cr>"] = cmp.config.disable,
@@ -76,9 +72,7 @@ return {
         formatting = {
           format = function(_, item)
             local icons = require("core.utils").icons
-            if icons[item.kind] then
-              item.kind = icons[item.kind] .. item.kind
-            end
+            if icons[item.kind] then item.kind = icons[item.kind] .. item.kind end
             return item
           end,
         },
@@ -89,6 +83,6 @@ return {
         },
         sorting = defaults.sorting,
       }
-    end
+    end,
   },
 }

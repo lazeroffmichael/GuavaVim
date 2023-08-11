@@ -20,7 +20,6 @@ return {
     { "<leader>fb", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "[f]ind [b]uffer" },
     { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "[f]ind [r]ecent" },
 
-
     -- search
     { "<leader>sg", "<cmd>Telescope live_grep<cr>", desc = "[s]earch [a]ll (grep)" },
     { "<leader>sb", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "[s]earch [b]uffer" },

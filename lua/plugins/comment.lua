@@ -1,7 +1,7 @@
 -- Comment out things with gc
 return {
   "numToStr/Comment.nvim",
-  event = {"BufReadPost", "BufNewFile"},
+  event = { "BufReadPost", "BufNewFile" },
   dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
   config = function()
     require("Comment").setup({

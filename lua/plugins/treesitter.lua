@@ -44,10 +44,10 @@ return {
       incremental_selection = {
         enable = true,
         keymaps = {
-          init_selection = '<CR>',
-          scope_incremental = '<CR>',
-          node_incremental = '<TAB>',
-          node_decremental = '<S-TAB>',
+          init_selection = "<CR>",
+          scope_incremental = "<CR>",
+          node_incremental = "<TAB>",
+          node_decremental = "<S-TAB>",
         },
       },
       -- See the nvim-ts-context-comment string man for disabing autocmd
@@ -57,5 +57,5 @@ return {
       },
     },
     config = function(_, opts) require("nvim-treesitter.configs").setup(opts) end,
-  }
+  },
 }
