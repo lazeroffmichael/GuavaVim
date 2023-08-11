@@ -2,8 +2,11 @@ return {
   {
     "tpope/vim-fugitive",
     lazy = true,
-    cmd = { "G", "Git" },
-    init = function() vim.keymap.set("n", "<leader>g", vim.cmd.Git, { desc = "[g]it fugitive" }) end,
+    cmd = { "G", "Git", "Gedit" },
+    init = function()
+      vim.keymap.set("n", "<leader>g", vim.cmd.Git, { desc = "[g]it fugitive" })
+      vim.keymap.set("n", "<leader>gg", "<cmd>Gedit :<cr>", { desc = "[g]it fugitive full" })
+    end,
   },
 
   {
