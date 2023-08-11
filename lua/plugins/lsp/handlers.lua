@@ -3,51 +3,29 @@ local M = {}
 local client_capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities = require("cmp_nvim_lsp").default_capabilities(client_capabilities)
 
+-- stylua: ignore start
+local function lsp_keymaps(bufnr)
+  vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "[c]ode [d]iagnostics", buffer = bufnr })
+  vim.keymap.set("n", "<leader>cl", vim.cmd.LspInfo, { desc = "[c]ode [l]sp info", buffer = bufnr })
+  vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "[c]ode [r]ename", buffer = bufnr })
+  vim.keymap.set("n", "gd", function() require("telescope.builtin").lsp_definitions({ reuse_win = true }) end, { desc = "[g]oto [d]efinition" })
+  vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", { desc = "[g]oto [r]eferences" } )
+  vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "[g]oto [D]eclaration", buffer = bufnr })
+  vim.keymap.set("n", "gI", function() require("telescope.builtin").lsp_implementations({ reuse_win = true }) end, { desc = "[g]oto [I]mplementation", buffer = bufnr })
+  vim.keymap.set("n", "gy", function() require("telescope.builtin").lsp_type_definitions({ reuse_win = true }) end, { desc = "[g]oto T[y]pe Definition", buffer = bufnr })
+  vim.keymap.set("n", "gds", require("telescope.builtin").lsp_document_symbols, {desc = "[g]o [d]ocument [s]ymbols", buffer = bufnr})
+  vim.keymap.set("n", "gws", require("telescope.builtin").lsp_dynamic_workspace_symbols, {desc = "[g]o [w]orkspace [s]ymbols", buffer = bufnr})
+  vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover", buffer = bufnr })
+  vim.keymap.set("n", "gK", vim.lsp.buf.signature_help, { desc = "[g]oto signature help", buffer = bufnr })
+  vim.keymap.set("i", "<c-k>", vim.lsp.buf.signature_help, { desc = "[g]oto signature help (i)", buffer = bufnr })
+  vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous [d]iagnostic", buffer = bufnr })
+  vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next [d]iagnostic", buffer = bufnr })
+  vim.keymap.set({ "n", "v" } , "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action", buffer = bufnr })
+end
+-- stylua: ignore end
+
 M.on_attach = function(_, bufnr)
-  local nmap = function(keys, func, desc)
-    if desc then desc = "LSP: " .. desc end
-
-    vim.keymap.set("n", keys, func, {buffer = bufnr, desc = desc})
-  end
-
-  -- Diagnostics
-  nmap("[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
-  nmap("]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
-  nmap("<leader>gl", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
-  nmap("<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
-
-
-  nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-  nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-
-  nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
-  nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-  nmap("gI", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
-  nmap("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
-  nmap("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-  nmap("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
-
-  -- See `:help K` for why this keymap
-  nmap("K", vim.lsp.buf.hover, "Hover Documentation")
-  nmap("<C-k>", vim.lsp.buf.signature_help, "Signature Documentation")
-
-  -- Lesser used LSP functionality
-  nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-  nmap("<leader>wa", vim.lsp.buf.add_workspace_folder, "[W]orkspace [A]dd Folder")
-  nmap("<leader>wr", vim.lsp.buf.remove_workspace_folder, "[W]orkspace [R]emove Folder")
-  nmap(
-    "<leader>wl",
-    function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end,
-    "[W]orkspace [L]ist Folders"
-  )
-
-  -- Create a command `:Format` local to the LSP buffer
-  vim.api.nvim_buf_create_user_command(
-    bufnr,
-    "Format",
-    function(_) vim.lsp.buf.format() end,
-    { desc = "Format current buffer with LSP" }
-  )
+  lsp_keymaps(bufnr)
 end
 
 return M

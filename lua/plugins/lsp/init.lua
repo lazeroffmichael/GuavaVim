@@ -6,6 +6,13 @@ return {
   -- BufNewFile: Triggered when a new buffer is created
   event = { "BufReadPost", "BufNewFile" },
   cmd = { "LSPInfo", "LspInstall", "LspUninstall" },
+  config = function()
+    local signs = { Error = "", Warn = "", Hint = "󰌵", Info = "" }
+    for type, icon in pairs(signs) do
+      local hl = "DiagnosticSign" .. type
+      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+    end
+  end,
   dependencies = {
     -- Configure sane lsp for neovim and lua api stuff
     { "folke/neodev.nvim",
@@ -30,31 +37,42 @@ return {
     { "williamboman/mason-lspconfig.nvim",
       config = function()
         -- Server list
-        local servers = {
-          pyright = {},
-          lua_ls = {
-            Lua = {
-              workspace = { checkThirdParty = false },
-              telemetry = { enable = false },
-            },
-          },
+
+        local ensure_installed = {
+          "pyright",
+          "lua_ls",
+        }
+
+        local disabled_servers = {
+          -- Servers to disable should go here
         }
 
         local mason_lspconfig = require("mason-lspconfig")
 
-        -- Configure the server list
+        -- Auto install servers
         mason_lspconfig.setup({
-          ensure_installed = vim.tbl_keys(servers),
+          ensure_installed = ensure_installed,
         })
 
         mason_lspconfig.setup_handlers({
           function(server_name)
-            require("lspconfig")[server_name].setup({
+            -- If we have a disabled server -> then don't do anything
+            for _, name in pairs(disabled_servers) do
+              if name == server_name then return end
+            end
+
+            local opts = {
+              on_attach = require("plugins.lsp.handlers").on_attach,
               capabilities = require("plugins.lsp.handlers").capabilities,
-              on_attatch = require("plugins.lsp.handlers").on_attach,
-              settings = servers[server_name],
-              filetypes = (servers[server_name] or {}).filetypes,
-            })
+            }
+
+            -- Get the config for the server if it exists
+            local ok, server = pcall("plugins.lsp.configs." .. server_name)
+            if ok then
+              opts.settings = server
+            end
+
+            require("lspconfig")[server_name].setup(opts)
           end
         })
       end
