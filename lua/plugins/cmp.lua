@@ -36,11 +36,13 @@ return {
       "hrsh7th/cmp-path",
       "saadparwaiz1/cmp_luasnip",
       "windwp/nvim-autopairs",
+      "onsails/lspkind.nvim",
     },
     opts = function()
       vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
       local cmp = require("cmp")
       local defaults = require("cmp.config.default")()
+      local lspkind = require("lspkind")
 
       -- a little autopairs action for functions
       cmp.event:on("confirm_done", require("nvim-autopairs.completion.cmp").on_confirm_done())
@@ -66,15 +68,21 @@ return {
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
           { name = "luasnip" },
-          { name = "buffer" },
+          { name = "buffer", keyword_length = 5 },
           { name = "path" },
         }),
         formatting = {
-          format = function(_, item)
-            local icons = require("core.utils").icons
-            if icons[item.kind] then item.kind = icons[item.kind] .. item.kind end
-            return item
-          end,
+          format = lspkind.cmp_format({
+            mode = "symbol_text",
+            maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+            ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+            menu = {
+              nvim_lsp = "[LSP]",
+              luasnip = "[snip]",
+              buffer = "[buf]",
+              path = "[path]",
+            }
+          }),
         },
         experimental = {
           ghost_text = {
