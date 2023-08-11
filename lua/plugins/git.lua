@@ -2,7 +2,7 @@ return {
   {
     "tpope/vim-fugitive",
     lazy = true,
-    cmd = { "G" },
+    cmd = { "G", "Git" },
   },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
