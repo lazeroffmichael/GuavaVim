@@ -1,6 +1,6 @@
 # 🥳 GuavaVim
 
-A custom neovim config with all the fixings.
+A custom neovim config with all the fixings. It's always a work in progress 😎
 
 ## 🔭 Features
 
@@ -65,3 +65,4 @@ Thank you to these sources:
 - ⭐️ [Alexis12119](https://github.com/Alexis12119/nvim-config)
 - ⭐️ [Elijah Manor](https://www.youtube.com/@ElijahManor)
 - ⭐️ [ThePrimeagen](https://www.youtube.com/channel/UC8ENHE5xdFSwx71u3fDH5Xw)
+- ⭐️ [TJ DeVries](https://www.youtube.com/c/tjdevries)
