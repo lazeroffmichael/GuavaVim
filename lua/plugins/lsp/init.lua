@@ -32,11 +32,11 @@ return {
           "pyright",
           "ruff-lsp",
           "lua-language-server", -- aka lua_ls
+          "marksman",
           -- Formatters
           "black",
           "prettierd",
           "stylua",
-          -- Linters
         }
 
         require("mason").setup({
@@ -74,6 +74,7 @@ return {
           "pyright",
           "ruff_lsp",
           "lua_ls",
+          "marksman"
         }
 
         local disabled_servers = {
