@@ -23,7 +23,7 @@ return {
       ["<leader>h"] = { name = "+harpoon" },
       ["<leader>x"] = { name = "+diagnostics/quickfix" },
       ["<leader>s"] = { name = "+search" },
-      ["<leader>f"] = { name = "+file/find" },
+      ["<leader>f"] = { name = "+file/find/format" },
     },
   },
   config = function(_, opts)
