@@ -6,6 +6,7 @@ return {
       lua = { require("formatter.filetypes.lua").stylua },
       typescript = { require("formatter.filetypes.typescript").prettier },
       json = { require("formatter.filetypes.json").fixjson },
+      python = { require("formatter.filetypes.python").black },
 
       ["*"] = {
         require("formatter.filetypes.any").remove_trailing_whitespace,
