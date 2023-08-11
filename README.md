@@ -1,6 +1,6 @@
 # 🥳 GuavaVim
 
-A custom neovim config with all the fixings. It's always a work in progress 😎
+A custom neovim config with all the fixings. Always a work in progress 😎
 
 ## 🔭 Features
 
@@ -17,6 +17,7 @@ A custom neovim config with all the fixings. It's always a work in progress 😎
 | ✅ Git                    | [vim-fugitive](https://github.com/tpope/vim-fugitive) + [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                       |
 | ✅ Fast Movements         | [flash.nvim](https://github.com/folke/flash.nvim)                                                                                         |
 | ✅ Formatting             | [formatter.nvim](https://github.com/mhartington/formatter.nvim)                                                                           |
+| ✅ Linting                | [nvim-lint](https://github.com/mfussenegger/nvim-lint)                                                                                    |
 
 ...and more!
 
@@ -74,7 +75,7 @@ For formatting to work, there needs to be a formatter on your path available. Yo
 use formatters installed through outside package managers, or you can use the formatters
 installed with Mason.
 
-To use the formatters installed with Mason, add Mason's bin to path in your shell rc file:
+To use the formatters installed with Mason, add Mason's bin to path in your shell's .rc file:
 
 ```
 export PATH="$PATH:$HOME/.local/share/nvim/mason/bin"
@@ -84,7 +85,7 @@ You can run `which stylua` and make sure that it registers that path.
 
 ### 🎥 Credits
 
-Thank you to these sources:
+Thank you to these sources!
 
 - ⭐️ [LazyVim](https://www.lazyvim.org/)
 - ⭐️ [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
