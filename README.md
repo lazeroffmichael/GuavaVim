@@ -18,6 +18,7 @@ A custom neovim config with all the fixings. Always a work in progress 😎
 | ✅ Fast Movements         | [flash.nvim](https://github.com/folke/flash.nvim)                                                                                         |
 | ✅ Formatting             | [formatter.nvim](https://github.com/mhartington/formatter.nvim)                                                                           |
 | ✅ Linting                | [nvim-lint](https://github.com/mfussenegger/nvim-lint)                                                                                    |
+| ✅ Testing                | [neotest](https://github.com/nvim-neotest/neotest)                                                                                        |
 
 ...and more!
 
