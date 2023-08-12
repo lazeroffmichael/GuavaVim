@@ -1,3 +1,4 @@
+vim.opt.guicursor = ""
 vim.opt.autowrite = true -- Enable auto write
 vim.opt.backup = false
 vim.opt.breakindent = true

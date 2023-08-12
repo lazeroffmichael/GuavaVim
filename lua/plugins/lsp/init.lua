@@ -14,8 +14,16 @@ return {
     end
   end,
   dependencies = {
+
     -- Configure sane lsp for neovim and lua api stuff
-    { "folke/neodev.nvim", event = "LspAttach", opts = {} },
+    {
+      "folke/neodev.nvim",
+      event = "LspAttach",
+      opts = {
+        -- for use with neotest
+        library = { plugins = { "neotest" }, types = true },
+      },
+    },
 
     -- Useful status updates for LSP
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
@@ -76,7 +84,7 @@ return {
           "pyright",
           "ruff_lsp",
           "lua_ls",
-          "marksman"
+          "marksman",
         }
 
         local disabled_servers = {

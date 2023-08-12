@@ -58,7 +58,7 @@ return {
         require("dap-python").test_runner = "pytest"
 
         -- New configuration that allows stepping into functions that we didn't write
-        table.insert(require("dap").configurations.python, 2, require("plugins.dap.debugpy"))
+        table.insert(require("dap").configurations.python, 2, require("plugins.dap.configs.debugpy"))
       end,
     },
   },
