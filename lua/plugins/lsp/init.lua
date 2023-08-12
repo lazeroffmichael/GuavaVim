@@ -37,6 +37,8 @@ return {
           "black",
           "prettierd",
           "stylua",
+          -- Debuggers
+          "debugpy",
         }
 
         require("mason").setup({
