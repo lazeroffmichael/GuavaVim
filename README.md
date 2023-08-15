@@ -19,6 +19,7 @@ A custom neovim config with all the fixings. Always a work in progress 😎
 | ✅ Formatting             | [formatter.nvim](https://github.com/mhartington/formatter.nvim)                                                                           |
 | ✅ Linting                | [nvim-lint](https://github.com/mfussenegger/nvim-lint)                                                                                    |
 | ✅ Testing                | [neotest](https://github.com/nvim-neotest/neotest)                                                                                        |
+| ✅ Debugging              | [nvim-dap](https://github.com/mfussenegger/nvim-dap)                                                                                      |
 
 ...and more!
 
