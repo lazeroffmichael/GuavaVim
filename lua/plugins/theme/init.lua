@@ -4,9 +4,9 @@ return {
     "xiyaowong/transparent.nvim",
     lazy = false,
     keys = {
-      { "<leader>tw", "<cmd>TransparentToggle<cr>", desc = "[t]oggle [w]indow transparent" }
+      { "<leader>tw", "<cmd>TransparentToggle<cr>", desc = "[t]oggle [w]indow transparent" },
     },
-    opts = {}
+    opts = {},
   },
 
   {

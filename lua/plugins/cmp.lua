@@ -81,7 +81,7 @@ return {
               luasnip = "[snip]",
               buffer = "[buf]",
               path = "[path]",
-            }
+            },
           }),
         },
         experimental = {
