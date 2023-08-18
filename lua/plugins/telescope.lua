@@ -42,6 +42,7 @@ return {
 
     -- file browser
     { "<leader>e", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>", desc = "[e]xplorer (telescope)" },
+    { "<leader>eb", "<cmd>Telescope file_browser<CR>", desc = "[e]xplorer [b]ase(telescope)" },
   },
   opts = {},
   config = function(opts)
