@@ -8,9 +8,12 @@ return {
   cmd = { "Telescope" },
   dependencies = {
     "nvim-lua/plenary.nvim",
-    -- Fuzzy Finder Algorithm which requires local dependencies to be built.
-    -- Only load if `make` is available. Make sure you have the system
-    -- requirements installed.
+    "nvim-telescope/telescope-file-browser.nvim",
+    -- {
+    --   "nvim-telescope/telescope-fzf-native.nvim",
+    --   build = "make",
+    --   cond = function() return vim.fn.executable("make") == 1 end,
+    -- },
   },
   keys = {
     -- find files
@@ -36,5 +39,14 @@ return {
 
     -- git
     { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "[g]it [c]ommits" },
+
+    -- file browser
+    { "<leader>e", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>", desc = "[e]xplorer (telescope)" },
   },
+  opts = {},
+  config = function(opts)
+    require("telescope").setup(opts)
+    require("telescope").load_extension("file_browser")
+    -- require("telescope").load_extension("fzf")
+  end,
 }
