@@ -35,6 +35,7 @@ return {
         "regex",
         "tsx",
         "typescript",
+        "prisma",
         "vim",
         "vimdoc",
         "yaml",

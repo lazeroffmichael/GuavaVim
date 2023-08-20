@@ -39,8 +39,11 @@ return {
           -- LSP's
           "pyright",
           "ruff-lsp",
-          "lua-language-server", -- aka lua_ls
+          "lua-language-server",
           "marksman",
+          "prisma-language-server",
+          "eslint-lsp",
+          "typescript-language-server",
           -- Formatters
           "black",
           "prettierd",
@@ -85,6 +88,9 @@ return {
           "ruff_lsp",
           "lua_ls",
           "marksman",
+          "prismals",
+          "eslint",
+          "tsserver",
         }
 
         local disabled_servers = {
