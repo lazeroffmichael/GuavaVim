@@ -18,22 +18,28 @@ return {
       filetype = settings,
     })
 
-    vim.keymap.set("n", "<leader>fw", function()
-      if settings[vim.bo.filetype] ~= nil then
-        vim.cmd([[Format]])
-        -- This is a very hacky way to get the exe doing the formatting to print
-        -- https://github.com/mhartington/formatter.nvim/issues/263
-        local config = require("formatter.config")
-        local fmts = config.formatters_for_filetype(vim.bo.filetype)
-        for _, fmt_config in ipairs(fmts) do
-          local current_fmt = fmt_config()
-          -- filter out sed which is equivalent to "*"
-          if current_fmt.exe ~= "sed" then print("Fmt: " .. current_fmt.exe) end
+    -- https://github.com/mhartington/formatter.nvim/issues/48#issuecomment-856024404
+    require("formatter.util").print = function() end
+
+    local group = vim.api.nvim_create_augroup("formatter.nvim", { clear = true })
+    vim.api.nvim_create_autocmd("BufWritePost", {
+      pattern = "*",
+      group = group,
+      callback = function()
+        if settings[vim.bo.filetype] ~= nil then
+          vim.cmd([[FormatWrite]])
+
+          local _, config = pcall(require, "formatter.config")
+          local fmts = config.formatters_for_filetype(vim.bo.filetype)
+          for _, fmt_config in ipairs(fmts) do
+            local current_fmt = fmt_config()
+            if current_fmt.exe ~= "sed" then print("Fmt: " .. current_fmt.exe) end
+          end
+        else
+          vim.lsp.buf.format()
+          print("Fmt: LSP")
         end
-      else
-        vim.lsp.buf.format()
-        print("Fmt: LSP")
-      end
-    end, { desc = "[f]ormat [w]rite" })
+      end,
+    })
   end,
 }

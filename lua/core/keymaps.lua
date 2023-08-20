@@ -47,6 +47,7 @@ vim.keymap.set("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev se
 
 -- save file
 vim.keymap.set("n", "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
+vim.keymap.set("n", "<leader>w", "<cmd>w<cr><esc>", { desc = "[w]rite file" })
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "[q]uit all" })
 vim.keymap.set("n", "<leader>qd", "<cmd>qa!<cr>", { desc = "[q]uit [d]estroy all" })
 vim.keymap.set("n", "<leader>wq", "<cmd>wqa<cr>", { desc = "[w]rite [q]uit all" })
