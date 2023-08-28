@@ -44,6 +44,7 @@ return {
           "prisma-language-server",
           "eslint-lsp",
           "typescript-language-server",
+          "yaml-language-server",
           -- Formatters
           "black",
           "prettierd",
@@ -85,6 +86,7 @@ return {
         -- Ensure that our configured servers are installed
         local ensure_installed = {
           "pyright",
+          "yamlls",
           "ruff_lsp",
           "lua_ls",
           "marksman",
