@@ -23,4 +23,11 @@ return {
     lazy = true,
     opts = require("plugins.theme.configs.ayu"),
   },
+
+  {
+    "kvrohit/mellow.nvim",
+    priority = 10000,
+    lazy = true,
+    config = function() require("plugins.theme.configs.mellow") end,
+  },
 }
