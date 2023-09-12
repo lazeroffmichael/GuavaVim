@@ -8,7 +8,6 @@ return {
   cmd = { "Telescope" },
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "nvim-telescope/telescope-file-browser.nvim",
     -- {
     --   "nvim-telescope/telescope-fzf-native.nvim",
     --   build = "make",
@@ -39,15 +38,10 @@ return {
 
     -- git
     { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "[g]it [c]ommits" },
-
-    -- file browser
-    { "<leader>e", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>", desc = "[e]xplorer (telescope)" },
-    { "<leader>eb", "<cmd>Telescope file_browser<CR>", desc = "[e]xplorer [b]ase(telescope)" },
   },
   opts = {},
   config = function(opts)
     require("telescope").setup(opts)
-    require("telescope").load_extension("file_browser")
     -- require("telescope").load_extension("fzf")
   end,
 }
