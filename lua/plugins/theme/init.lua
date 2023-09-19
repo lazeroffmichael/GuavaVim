@@ -13,6 +13,6 @@ return {
     "folke/tokyonight.nvim",
     priority = 10000,
     lazy = false,
-    opts = {},
+    opts = require("plugins.theme.configs.tokyonight"),
   },
 }
