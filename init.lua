@@ -1,10 +1,8 @@
 require("core")
 require("install-lazy")
 
--- tokyodark
--- ayu
--- mellow
-local name = "mellow"
+-- tokyonight
+local name = "tokyonight"
 
 -- Set the theme
 vim.cmd.colorscheme(name)
