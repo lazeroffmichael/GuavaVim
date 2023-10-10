@@ -1,5 +1,5 @@
 return {
-  style = "day",
+  style = "storm",
   styles = {
     comments = { italic = true, bold = true },
   },
