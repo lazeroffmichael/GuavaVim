@@ -55,6 +55,7 @@ return {
         "<leader>gw",
         function() require("telescope").extensions.git_worktree.git_worktrees() end,
         desc = "[g]it [w]orktrees",
+        silent = true,
       },
       {
         "<leader>gwc",
