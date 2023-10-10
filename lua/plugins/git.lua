@@ -46,4 +46,21 @@ return {
       end,
     },
   },
+
+  {
+    "theprimeagen/git-worktree.nvim",
+    opts = {},
+    keys = {
+      {
+        "<leader>gw",
+        function() require("telescope").extensions.git_worktree.git_worktrees() end,
+        desc = "[g]it [w]orktrees",
+      },
+      {
+        "<leader>gwc",
+        function() require("telescope").extensions.git_worktree.create_git_worktree() end,
+        desc = "[g]it [w]orktrees [c]reate",
+      },
+    },
+  },
 }
