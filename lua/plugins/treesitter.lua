@@ -51,11 +51,6 @@ return {
           node_decremental = "<S-TAB>",
         },
       },
-      -- See the nvim-ts-context-comment string man for disabing autocmd
-      context_commentstring = {
-        enable = true,
-        enable_autocmd = false,
-      },
     },
     config = function(_, opts) require("nvim-treesitter.configs").setup(opts) end,
   },
