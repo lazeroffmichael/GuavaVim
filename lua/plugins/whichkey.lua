@@ -12,7 +12,7 @@ return {
       ["g"] = { name = "+goto" },
       ["]"] = { name = "+next" },
       ["["] = { name = "+prev" },
-      ["<leader>t"] = { name = "+toggle" },
+      ["<leader>t"] = { name = "+test/toggle" },
       ["<leader>c"] = { name = "+code" },
       ["<leader>g"] = { name = "+git" },
       ["<leader>gh"] = { name = "+hunks" },
