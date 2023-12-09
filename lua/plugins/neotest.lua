@@ -1,6 +1,5 @@
 return {
   "nvim-neotest/neotest",
-  ft = { "python" },
   dependencies = {
     "nvim-lua/plenary.nvim",
     "antoinemadec/FixCursorHold.nvim",
@@ -14,7 +13,7 @@ return {
     { "<leader>tS", function() require("neotest").summary.toggle() end, desc = "Toggle Summary" },
     {
       "<leader>to",
-      function() require("neotest").output.open({ enter = true, auto_close = true }) end,
+      function() require("neotest").output.open({ enter = true }) end,
       desc = "Show Output",
     },
     { "<leader>tO", function() require("neotest").output_panel.toggle() end, desc = "Toggle Output Panel" },
