@@ -1,3 +1,4 @@
+-- The colorschem is set in init.lua
 return {
   -- Transparency
   {
@@ -11,8 +12,15 @@ return {
 
   {
     "folke/tokyonight.nvim",
-    priority = 10000,
-    lazy = false,
+    priority = 1000,
+    lazy = true,
     opts = require("plugins.theme.configs.tokyonight"),
+  },
+
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    opts = require("plugins.theme.configs.catppuccin"),
   },
 }
